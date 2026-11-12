@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Thread Stories – Ladies Boutique, Oman</title>
+<meta name="description" content="Indian ethnic wear and jewellery for women in Oman. Three piece suits, kurtis, co-ord sets, sarees, plus size, anti-tarnish and oxidised jewellery.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="announce">Complimentary delivery in Oman on orders over OMR [AMOUNT]</div>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header" id="siteHeader">
+  <nav class="desk-nav" aria-label="Main">
+    <a href="#new" data-close-menu>New In</a>
+    <button type="button" class="nav-drop" data-menu="clothing" aria-expanded="false">Clothing</button>
+    <button type="button" class="nav-drop" data-menu="jewellery" aria-expanded="false">Jewellery</button>
+    <a href="#categories" data-close-menu>Footwear</a>
+    <a href="#sale" class="nav-sale" data-close-menu>Sale</a>
+  </nav>
+
+  <a href="#top" class="logo" aria-label="The Thread Stories – home">
+    <img src="images/logo-monogram.png" alt="" class="logo-mark">
+    <img src="images/logo-name.png" alt="The Thread Stories" class="logo-name">
+  </a>
+
+  <div class="header-icons">
+    <button type="button" class="icon-btn" aria-label="Search"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></button>
+    <button type="button" class="icon-btn" aria-label="Account"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></button>
+    <button type="button" class="icon-btn" aria-label="Wishlist"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/></svg></button>
+    <button type="button" class="icon-btn bag-btn" aria-label="Shopping bag"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 8h14l-1 13H6L5 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><span class="bag-count" hidden>0</span></button>
+  </div>
+
+  <!-- Mega menu (desktop) -->
+  <div class="mega" id="mega" hidden>
+    <div class="mega-cols" id="megaCols"></div>
+    <div class="mega-tiles" id="megaTiles"></div>
+  </div>
+</header>
+
+<!-- Added-to-bag toast -->
+<div class="toast" id="toast" role="status" aria-live="polite" hidden>
+  <span class="toast-tick" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg></span>
+  <span class="toast-text"><strong>Added to bag</strong><span id="toastText"></span></span>
+  <a href="#top">View bag</a>
+</div>
+
+<main>
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="hero-photos" aria-hidden="true">
+    <div class="ph" style="background-image:url(images/plum-kurta-set.jpg);background-position:center 12%"></div>
+    <div class="ph" style="background-image:url(images/pink-anarkali.jpg);background-position:center 10%"></div>
+    <div class="ph" style="background-image:url(images/teal-suit.jpg);background-position:center 8%"></div>
+    <div class="ph" style="background-image:url(images/green-kurta.jpg);background-position:center 20%"></div>
+  </div>
+  <div class="hero-shade" aria-hidden="true"></div>
+  <div class="hero-copy">
+    <div class="eyebrow eyebrow-gold">The new season</div>
+    <h1>Every thread<br>tells a <em>story</em></h1>
+    <p>Indian ethnic and fusion wear, thoughtfully chosen for women in Oman — graceful silhouettes, beautiful fabrics and details worth a second look.</p>
+    <div class="hero-ctas">
+      <a href="#new" class="btn btn-accent">Shop new arrivals</a>
+      <a href="#edit" class="btn-link">Explore the edit</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CATEGORIES (admin-selected, carousel) ============ -->
+<section class="wrap section" id="categories">
+  <div class="section-head">
+    <div><div class="eyebrow">Shop by category</div><h2>Find your style</h2></div>
+    <div class="carousel-nav" id="catNav">
+      <span class="carousel-count" id="catRange" aria-live="polite"></span>
+      <button type="button" class="arrow" id="catPrev" aria-label="Previous categories"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <button type="button" class="arrow" id="catNext" aria-label="Next categories"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+    </div>
+  </div>
+  <div class="cat-grid" id="catGrid"></div>
+</section>
+
+<!-- ============ NEW ARRIVALS ============ -->
+<section class="wrap section" id="new">
+  <div class="section-head">
+    <div><div class="eyebrow">Just landed</div><h2>New arrivals</h2></div>
+    <a href="#new" class="btn-link view-all-link" data-filter="all">View all</a>
+    <div class="filter-menu">
+      <button type="button" class="filter-btn" id="filterBtn" aria-expanded="false" aria-haspopup="true" aria-controls="filterPop">
+        <span class="filter-txt"><span id="filterLabel">All</span>&nbsp;&nbsp;&nbsp;&nbsp;<svg class="chev" aria-hidden="true" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span>
+      </button>
+      <div class="filter-pop" id="filterPop" role="menu" hidden></div>
+    </div>
+  </div>
+  <div class="chips" role="list">
+    <a href="#new" data-filter="all" class="chip is-active" role="listitem">All</a>
+    <a href="#new" data-filter="suits" class="chip" role="listitem">Three Pc Suits</a>
+    <a href="#new" data-filter="kurtis" class="chip" role="listitem">Kurtis</a>
+    <a href="#new" data-filter="coord" class="chip" role="listitem">Co-ord Sets</a>
+    <a href="#new" data-filter="sarees" class="chip" role="listitem">Sarees</a>
+    <a href="#new" data-filter="plus" class="chip" role="listitem">Plus Size</a>
+    <a href="#new" data-filter="jewel" class="chip" role="listitem">Jewellery</a>
+    <a href="#new" data-filter="sale" class="chip" role="listitem">Sale</a>
+  </div>
+  <div class="product-grid" id="newGrid"></div>
+  <div class="empty-note" id="newEmpty" hidden></div>
+  <div class="center"><a href="#new" class="btn btn-outline">Load more</a></div>
+</section>
+
+<!-- ============ BEST SELLERS ============ -->
+<section class="band-pink" id="bestsellers">
+  <div class="wrap section">
+    <div class="section-head">
+      <div><div class="eyebrow">Customer favourites</div><h2>Best sellers</h2></div>
+      <a href="#bestsellers" class="btn-link">View all</a>
+    </div>
+    <div class="product-grid" id="bestGrid"></div>
+  </div>
+</section>
+
+<!-- ============ JEWELLERY ============ -->
+<section class="wrap section" id="jewellery">
+  <div class="section-head">
+    <div><div class="eyebrow">Finish the look</div><h2>The jewellery collection</h2></div>
+    <a href="#jewellery" class="btn-link">Shop all jewellery</a>
+  </div>
+  <div class="jewel-grid">
+    <a href="#jewellery" class="jewel-card"><span class="ph" style="background-image:url(images/ruby-chandbali.jpg);background-position:center 62%"></span><span>Chandbali Earrings</span></a>
+    <a href="#jewellery" class="jewel-card"><span class="ph" style="background-image:url(images/pearl-chandbali.jpg);background-position:center 60%"></span><span>Pearl Chandbalis</span></a>
+    <a href="#jewellery" class="jewel-card"><span class="ph" style="background-image:url(images/pearl-bangles.jpg);background-position:center 62%"></span><span>Bangles &amp; Kadas</span></a>
+    <a href="#jewellery" class="jewel-card"><span class="ph" style="background-image:url(images/ruby-ear-cuffs.jpg);background-position:center 58%"></span><span>Ear Cuffs</span></a>
+  </div>
+</section>
+
+<!-- ============ THE EDIT ============ -->
+<section class="edit" id="edit">
+  <div class="edit-inner">
+    <div class="edit-photo ph" role="img" aria-label="Model in a green embroidered festive kurta" style="background-image:url(images/green-kurta.jpg);background-position:center 20%"></div>
+    <div class="edit-copy">
+      <div class="eyebrow eyebrow-gold">The edit</div>
+      <h2>[Collection name]</h2>
+      <p>[Two or three sentences about this collection and the story behind The Thread Stories — the fabrics you choose, who you design for, and what makes each piece special.]</p>
+      <a href="#new" class="btn btn-gold">Shop the collection</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INSTAGRAM ============ -->
+<section class="wrap section">
+  <div class="center-head">
+    <div class="eyebrow">As seen on Instagram</div>
+    <h2><a href="https://www.instagram.com/thethreadstories_om/" target="_blank" rel="noopener">@thethreadstories_om</a></h2>
+  </div>
+  <div class="insta-grid">
+    <div class="ph" role="img" aria-label="Instagram post: plum kurta set" style="background-image:url(images/plum-kurta-set.jpg);background-position:center 12%"></div>
+    <div class="ph" role="img" aria-label="Instagram post: pink anarkali" style="background-image:url(images/pink-anarkali.jpg);background-position:center 10%"></div>
+    <div class="ph" role="img" aria-label="Instagram post: yellow kurti close-up" style="background-image:url(images/yellow-kurti.jpg);background-position:center 30%"></div>
+    <div class="ph" role="img" aria-label="Instagram post: navy salwar suit" style="background-image:url(images/navy-suit.jpg);background-position:center 8%"></div>
+    <div class="ph" role="img" aria-label="Instagram post: embroidery close-up" style="background-image:url(images/plum-embroidery.jpg);background-position:center 35%"></div>
+    <div class="ph" role="img" aria-label="Instagram post: teal suit" style="background-image:url(images/teal-suit.jpg);background-position:center 8%"></div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="services">
+  <div class="wrap services-row">
+    <div><strong>Delivery across Oman</strong><span>[Delivery time and fee]</span></div>
+    <div><strong>Order on WhatsApp</strong><span>[WhatsApp number]</span></div>
+    <div><strong>Easy exchanges</strong><span>[Exchange policy]</span></div>
+  </div>
+</section>
+
+<!-- ============ COMMUNITY ============ -->
+<section class="wrap section" id="community">
+  <div class="center-head">
+    <div class="eyebrow">Don't miss a drop</div>
+    <h2>Get it before it's gone</h2>
+  </div>
+  <div class="community">
+    <div class="community-card is-accent">
+      <div class="eyebrow">WhatsApp Community</div>
+      <h3>New drops land here first.</h3>
+      <p>New arrivals and restocks, straight to your phone. Love it? Reply to order.</p>
+      <a href="#community" class="btn btn-gold">Join on WhatsApp</a>
+      <small>[WhatsApp community invite link]</small>
+    </div>
+    <div class="community-card">
+      <div class="eyebrow">Instagram</div>
+      <h3>Fresh looks, every day.</h3>
+      <p>Styling reels, collection previews and behind the scenes. DM us to order.</p>
+      <a href="https://www.instagram.com/thethreadstories_om/" target="_blank" rel="noopener" class="btn btn-outline">Follow on Instagram</a>
+      <small>@thethreadstories_om</small>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="wrap footer-cols">
+    <div class="footer-brand"><span>The Thread Stories</span><p>Indian ethnic wear and jewellery for women in Oman. Every thread tells a story.</p></div>
+    <div><h4>Shop</h4><a href="#new">New In</a><a href="#categories">Three Pc Suits</a><a href="#categories">Kurtis</a><a href="#categories">Sarees &amp; Blouses</a><a href="#categories">Plus Size</a><a href="#jewellery">Jewellery</a><a href="#categories">Footwear</a></div>
+    <div><h4>Help</h4><a href="#top">Delivery</a><a href="#top">Exchanges &amp; Returns</a><a href="#top">Size Guide</a><a href="#top">Contact Us</a></div>
+    <div><h4>Get in touch</h4><span>WhatsApp: [number]</span><span>[Email address]</span><a href="https://www.instagram.com/thethreadstories_om/" target="_blank" rel="noopener">Instagram</a></div>
+  </div>
+  <div class="wrap footer-base"><span>© 2026 The Thread Stories. All rights reserved.</span><span>Prices in Omani Rial (OMR)</span></div>
+</footer>
+
+<!-- ============ BOTTOM BAR (mobile & tablet) ============ -->
+<nav class="bottom-bar" aria-label="Main menu">
+  <a href="#top" class="is-active"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 11l8-7 8 7v9H4z"/></svg>Home</a>
+  <button type="button" data-open-drawer><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg>Categories</button>
+  <button type="button" data-open-drawer><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>Search</button>
+  <a href="#top"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/></svg>Wishlist</a>
+  <a href="#top" class="bb-bag"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 8h14l-1 13H6L5 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>Bag<span class="bag-count" hidden>0</span></a>
+</nav>
+
+<!-- ============ MOBILE MENU DRAWER ============ -->
+<div class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Menu" hidden>
+  <div class="drawer-head">
+    <span class="logo"><img src="images/logo-monogram.png" alt="" class="logo-mark"><img src="images/logo-name.png" alt="The Thread Stories" class="logo-name"></span>
+    <button type="button" class="icon-btn drawer-close" aria-label="Close menu" data-close-drawer><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  </div>
+  <div class="drawer-search">
+    <label for="drawerSearch" class="sr-only">Search products</label>
+    <div class="search-pill"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><input id="drawerSearch" type="search" placeholder="Search kurtis, sarees, jewellery…"></div>
+  </div>
+  <div class="drawer-body">
+    <nav class="rail" id="rail" aria-label="Categories"></nav>
+    <div class="rail-panel" id="railPanel"></div>
+  </div>
+  <div class="drawer-foot">
+    <a href="#top" class="btn btn-outline">My Account</a>
+    <a href="#community" class="btn btn-teal">WhatsApp us</a>
+  </div>
+</div>
+
+<!-- ============ QUICK-ADD SHEET (touch devices) ============ -->
+<div class="sheet-backdrop" id="sheetBackdrop" hidden></div>
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-label="Quick add" hidden></div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
