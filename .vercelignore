@@ -1,0 +1,9 @@
+# Keep the deployment to the static site only
+node_modules
+.git
+.vscode
+README.md
+README.txt
+LICENSE
+db.json
+*.log
