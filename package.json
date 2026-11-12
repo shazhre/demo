@@ -5,8 +5,10 @@
   "description": "The Thread Stories – static storefront site",
   "license": "MIT",
   "scripts": {
-    "dev": "npx --yes serve@14.2.4 . -l 3000",
-    "start": "npx --yes serve@14.2.4 .",
+    "build": "node scripts/build.mjs",
+    "postinstall": "npm run build",
+    "dev": "npm run build && npx --yes serve@14.2.4 public -l 3000",
+    "start": "npm run build && npx --yes serve@14.2.4 public",
     "deploy": "npx --yes vercel@latest",
     "deploy:prod": "npx --yes vercel@latest --prod"
   },

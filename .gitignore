@@ -60,3 +60,6 @@ typings/
 
 # Vercel
 .vercel
+
+# Build output
+public/
