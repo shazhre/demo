@@ -5,7 +5,7 @@ import { fileURLToPath } from "node:url";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const out = join(root, "public");
-const entries = ["index.html", "css", "js", "images"];
+const entries = ["index.html", "css", "js", "images", "v2"];
 
 if (!existsSync(join(root, "index.html"))) {
   console.error("build: index.html not found at project root");
